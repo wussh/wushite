@@ -1,7 +1,29 @@
-// FAQ Accordion
 document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
   const faqContainer = document.querySelector('.faq-content');
+  const scrollOffset = 100; // Adjust this value as needed
+  let isNavbarFixed = false;
 
+  // Function to handle scroll event
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    const shouldFixNavbar = offset > scrollOffset;
+
+    if (shouldFixNavbar && !isNavbarFixed) {
+      navbar.classList.add('fixed');
+      isNavbarFixed = true;
+    } else if (!shouldFixNavbar && isNavbarFixed) {
+      navbar.classList.remove('fixed');
+      isNavbarFixed = false;
+    }
+  };
+
+  // Add scroll event listener with smooth scrolling
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(handleScroll);
+  });
+
+  // FAQ Accordion
   faqContainer.addEventListener('click', (e) => {
     const groupHeader = e.target.closest('.faq-group-header');
 
@@ -32,4 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mobile Menu
+  const hamburgerButton = document.querySelector('.hamburger-button');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  hamburgerButton.addEventListener('click', () =>
+    mobileMenu.classList.toggle('active')
+  );
 });
