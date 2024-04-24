@@ -38,6 +38,15 @@
   .navbar {
     background: #fff;
     padding: 20px;
+    transition: top 0.3s ease, opacity 0.3s ease; /* Add transition for smooth animation */
+  }
+
+  .navbar.fixed.show {
+    opacity: 1
+  }
+  
+  .navbar.fixed.animate {
+    top: 0;
   }
 
   .navbar.fixed {
