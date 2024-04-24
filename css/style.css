@@ -120,21 +120,26 @@
   }
   
   .container {
-    display: flex; /* Use flexbox */
+    display: flex;
   }
-  
+
+  .aside img {
+    display: block;
+    margin: 0 auto;
+  }
   .aside {
-    flex: 1; /* Take up available space */
-    order: -1; /* Move aside before main */
+    text-align: center;
+    flex: 1;
+    order: -1;
     background-color: #ffffff;
     padding: 20px;
-    margin-right: 20px; /* Add margin for spacing */
+    margin-right: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .main {
-    flex: 2; /* Take up available space */
+    flex: 2;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
