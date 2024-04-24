@@ -38,7 +38,7 @@
   .navbar {
     background: #fff;
     padding: 20px;
-    transition: top 0.3s ease, opacity 0.3s ease; /* Add transition for smooth animation */
+    transition: top 0.3s ease, opacity 0.3s ease;
   }
 
   .navbar.fixed.show {
@@ -119,14 +119,11 @@
     margin-bottom: 20px;
   }
   
+    /* Aside */
   .container {
     display: flex;
   }
-
-  .aside img {
-    display: block;
-    margin: 0 auto;
-  }
+  
   .aside {
     text-align: center;
     flex: 1;
@@ -137,7 +134,13 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+
+  .aside img {
+    display: block;
+    margin: 0 auto;
+  }
+
+    /* Main */
   .main {
     flex: 2;
     background-color: #ffffff;
